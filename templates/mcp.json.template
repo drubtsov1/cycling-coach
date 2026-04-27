@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "Intervals.icu": {
+      "command": "${UV_PATH}",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "--with-editable",
+        "${INTERVALS_MCP_PATH}",
+        "mcp",
+        "run",
+        "${INTERVALS_MCP_PATH}/src/intervals_mcp_server/server.py"
+      ],
+      "env": {
+        "INTERVALS_API_BASE_URL": "https://intervals.icu/api/v1",
+        "ATHLETE_ID": "${INTERVALS_ATHLETE_ID}",
+        "API_KEY": "${INTERVALS_API_KEY}",
+        "LOG_LEVEL": "INFO"
+      }
+    }
+  }
+}

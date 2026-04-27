@@ -1,0 +1,11 @@
+{
+  "name": "cycling-coach",
+  "version": "0.1.0",
+  "description": "A personal cycling coach for Claude Code: training analysis, fueling, and Intervals.icu workout planning.",
+  "author": {
+    "name": "Dmitry Rubtsov",
+    "url": "https://github.com/drubtsov1"
+  },
+  "homepage": "https://github.com/drubtsov1/cycling-coach",
+  "keywords": ["cycling", "training", "intervals.icu", "coaching"]
+}

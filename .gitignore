@@ -1,0 +1,13 @@
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# Never commit anything personal that might end up in this dir during dev
+.env
+.env.*
+!.env.example
+*.local.json
