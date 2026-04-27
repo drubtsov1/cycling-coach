@@ -44,8 +44,6 @@ Calculate grams of carbohydrates for the post-ride drink (within 10 minutes of f
 | >240 min | 61-72 | 1.1-1.2 |
 | >240 min | >=73 | 1.2 |
 
-Source: Romero Coaching
-
 ## Output format
 
 Report: duration, TSS, TSS/h, carb dose range (g/kg), total carbs range (g), and a practical suggestion (e.g. "mix 80-90g maltodextrin in water").

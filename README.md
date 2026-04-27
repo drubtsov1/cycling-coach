@@ -102,7 +102,6 @@ Skills and templates update automatically. The Intervals.icu MCP server you upda
 
 ## Credits
 
-- Carb tables in `post-ride-drink` come from Romero Coaching
 - Zone definitions follow Coggan / Joe Friel / TrainerRoad conventions
 - The Intervals.icu MCP server is maintained by [@mvilanova](https://github.com/mvilanova/intervals-mcp-server)
 
