@@ -73,7 +73,7 @@ Then **edit `CLAUDE.md`** — replace all `{{PLACEHOLDERS}}` with your real valu
 
 Restart Claude Code in your project directory. Ask it:
 
-> покажи мою последнюю активность
+> show me my latest activity
 
 If it can fetch from Intervals.icu and reply in coach mode — you're set.
 
