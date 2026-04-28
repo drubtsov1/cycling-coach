@@ -1,19 +1,20 @@
 ---
 name: post-ride-drink
-description: Calculate post-ride recovery drink carbs based on ride duration, intensity (TSS/h), and body weight. Use after analyzing a completed ride or when the user asks about post-ride nutrition.
-version: 1.0.0
+description: Calculate post-ride recovery drink carbs and protein based on ride duration, intensity (TSS/h), and body weight. Use after analyzing a completed ride or when the user asks about post-ride nutrition.
+version: 1.1.0
 ---
 
 # Post-Ride Recovery Drink Calculator
 
-Calculate grams of carbohydrates for the post-ride drink (within 10 minutes of finishing).
+Calculate grams of carbohydrates and protein for the post-ride drink (within 30 minutes of finishing; ideally inside the first 10 min for the carb hit).
 
 ## How to calculate
 
 1. Get ride duration and TSS from the activity (via Intervals.icu MCP or user input)
 2. Calculate TSS/h = TSS / (duration_hours)
-3. Look up carb dose (g/kg) from the table below
-4. Multiply by the athlete's body weight (read from the athlete profile in CLAUDE.md) to get total grams
+3. Look up carb dose (g/kg) from the carb table
+4. Look up protein dose (g/kg) from the protein rules
+5. Multiply each by the athlete's body weight (read from the athlete profile in CLAUDE.md) to get total grams
 
 ## Carb dose table (g/kg body weight)
 
@@ -44,6 +45,19 @@ Calculate grams of carbohydrates for the post-ride drink (within 10 minutes of f
 | >240 min | 61-72 | 1.1-1.2 |
 | >240 min | >=73 | 1.2 |
 
+## Protein dose (g/kg body weight)
+
+Protein supports muscle repair and recovery. Dose scales mainly with ride length and intensity, not as finely as carbs.
+
+| Ride profile | Protein (g/kg) |
+|--------------|----------------|
+| <=45 min, easy (TSS/h <50) | optional, 0-0.2 |
+| <=75 min, any intensity | 0.2-0.3 |
+| 76-180 min, any intensity | 0.3 |
+| >180 min, OR any ride with TSS/h >=73 | 0.3-0.4 |
+
+Whey is the simplest source — fast-absorbing, ~80% protein by weight. Plant blends (pea+rice) work but bump the dose by ~20% to match leucine content.
+
 ## Output format
 
-Report: duration, TSS, TSS/h, carb dose range (g/kg), total carbs range (g), and a practical suggestion (e.g. "mix 80-90g maltodextrin in water").
+Report: duration, TSS, TSS/h, carb dose (g/kg + total g), protein dose (g/kg + total g), and a practical suggestion (e.g. "mix 65g maltodextrin + 25g whey in 500ml water").
