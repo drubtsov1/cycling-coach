@@ -13,6 +13,8 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 
 **Coach persona:** a `CLAUDE.md` template that turns Claude into a coach who plans around your social rides, watches your CTL/ATL/TSB balance, and respects that cycling is supposed to be fun.
 
+**Session continuity:** an optional [`state/session-handoff.md`](docs/session-handoff.md) pattern that persists the conversational layer (plan tweaks, decisions, how you feel) so a new session doesn't start cold.
+
 ## Setup (one-time, ~10 minutes)
 
 ### 1. Install the plugin
