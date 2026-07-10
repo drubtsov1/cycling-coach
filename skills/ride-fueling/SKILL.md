@@ -89,7 +89,27 @@ Present a concrete plan:
 
 Keep it simple and actionable. User needs a checklist, not a lecture.
 
-## Race fueling (Gran Fondo / events)
+## Pre-ride fueling (before the start)
+
+Carbs 30–60 min before rolling out, scaled to the ride. This tops up liver
+glycogen after the overnight fast — it is **not** the on-ride fuel (that's the
+plan above). Keep it low-fat and low-fibre so it clears the stomach fast.
+
+| Ride type | Carbs before start | Easy sources |
+|---|---|---|
+| Off / Z1 < 45 min | 0 (optional) | nothing, or a banana |
+| Z2 60–90 min | 25–35 g | banana + a date, or toast + honey |
+| Z2 2–3 h | 40–50 g | banana + 30 g energy bar, or 30 g dry oats |
+| Tempo / VO2 (any length) | 40–60 g | banana + oatmeal (30 g dry) |
+| Long 3–4 h | 50–70 g | oatmeal (50 g dry) + honey + banana |
+| Race day (long event) | 2–3 g/kg full breakfast 2–3 h before, then +25–35 g 30 min before | see Race fueling below |
+
+- Fast, low-fibre carbs sit best pre-start (ripe banana, white toast + jam/honey,
+  dates, a gel). Save high-fibre wholegrains for later in the day.
+- Don't combine with fatty food in the last hour before the start — fat slows the
+  fast carbs.
+
+## Race fueling (events)
 
 For A-races, also cover (use the athlete's body weight from CLAUDE.md profile):
 

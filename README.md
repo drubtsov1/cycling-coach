@@ -6,7 +6,8 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 
 **Skills** (auto-activated when relevant):
 - `post-ride-drink` — recovery drink carbs + protein (g/kg) based on duration + TSS/h
-- `ride-fueling` — full on-ride nutrition plan (bottles, gels, shop stops, race fueling)
+- `ride-fueling` — full ride nutrition plan: pre-ride, on-ride (bottles, gels, shop stops), and race fueling
+- `nutrition-log` — daily food log with macros summed against a training-scaled target
 - `intervals-workout` — create/modify structured workouts in Intervals.icu via MCP, with the right power targets, intensity fields, and lap-press behavior
 
 **MCP integration:** the [Intervals.icu MCP server](https://github.com/mvilanova/intervals-mcp-server) wired into Claude Code so it can read your activities, wellness, and calendar in real time.
