@@ -13,6 +13,8 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 
 **Coach persona:** a `CLAUDE.md` template that turns Claude into a coach who plans around your social rides, watches your CTL/ATL/TSB balance, and respects that cycling is supposed to be fun.
 
+**Bonus script:** [`scripts/whoop_export/`](scripts/whoop_export/) — optionally mirror your full Whoop history to CSV with a rolling 30/60-day HRV/RHR baseline, for longitudinal analysis (stdlib Python, no dependencies).
+
 ## Setup (one-time, ~10 minutes)
 
 ### 1. Install the plugin
