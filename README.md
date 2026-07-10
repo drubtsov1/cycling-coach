@@ -5,6 +5,7 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 ## What you get
 
 **Skills** (auto-activated when relevant):
+- `onboarding` — interviews you and fills your `CLAUDE.md` profile (FTP, schedule, goals) on first run
 - `post-ride-drink` — recovery drink carbs + protein (g/kg) based on duration + TSS/h
 - `ride-fueling` — full on-ride nutrition plan (bottles, gels, shop stops, race fueling)
 - `intervals-workout` — create/modify structured workouts in Intervals.icu via MCP, with the right power targets, intensity fields, and lap-press behavior
@@ -12,6 +13,8 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 **MCP integration:** the [Intervals.icu MCP server](https://github.com/mvilanova/intervals-mcp-server) wired into Claude Code so it can read your activities, wellness, and calendar in real time.
 
 **Coach persona:** a `CLAUDE.md` template that turns Claude into a coach who plans around your social rides, watches your CTL/ATL/TSB balance, and respects that cycling is supposed to be fun.
+
+**📖 Full guide:** [`docs/GUIDE.md`](docs/GUIDE.md) — capability catalog, data-source routing, daily workflows, and example prompts.
 
 ## Setup (one-time, ~10 minutes)
 
@@ -76,6 +79,8 @@ Restart Claude Code in your project directory. Ask it:
 > show me my latest activity
 
 If it can fetch from Intervals.icu and reply in coach mode — you're set.
+
+**New here?** Instead of editing `CLAUDE.md` by hand, just ask the coach *"help me set up"* — the `onboarding` skill interviews you and fills in your profile.
 
 ## Updating
 
