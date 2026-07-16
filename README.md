@@ -6,7 +6,8 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 
 **Skills** (auto-activated when relevant):
 - `post-ride-drink` — recovery drink carbs + protein (g/kg) based on duration + TSS/h
-- `ride-fueling` — full on-ride nutrition plan (bottles, gels, shop stops, race fueling)
+- `ride-fueling` — full ride nutrition plan: pre-ride, on-ride (bottles, gels, shop stops), and race fueling
+- `nutrition-log` — daily food log with macros summed against a training-scaled target
 - `intervals-workout` — create/modify structured workouts in Intervals.icu via MCP, with the right power targets, intensity fields, and lap-press behavior
 - `ride-analysis` — deep per-interval / segment / climb analysis from raw streams (NP/IF/TSS/decoupling, gradient base→summit, FIT device laps)
 
