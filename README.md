@@ -5,6 +5,7 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 ## What you get
 
 **Skills** (auto-activated when relevant):
+- `onboarding` — interviews you and fills your `CLAUDE.md` profile (FTP, schedule, goals) on first run
 - `post-ride-drink` — recovery drink carbs + protein (g/kg) based on duration + TSS/h
 - `ride-fueling` — full ride nutrition plan: pre-ride, on-ride (bottles, gels, shop stops), and race fueling
 - `nutrition-log` — daily food log with macros summed against a training-scaled target
@@ -15,6 +16,7 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 
 **Coach persona:** a `CLAUDE.md` template that turns Claude into a coach who plans around your social rides, watches your CTL/ATL/TSB balance, and respects that cycling is supposed to be fun.
 
+**📖 Full guide:** [`docs/GUIDE.md`](docs/GUIDE.md) — capability catalog, data-source routing, daily workflows, and example prompts.
 **Session continuity:** an optional [`state/session-handoff.md`](docs/session-handoff.md) pattern that persists the conversational layer (plan tweaks, decisions, how you feel) so a new session doesn't start cold.
 **Bonus script:** [`scripts/whoop_export/`](scripts/whoop_export/) — optionally mirror your full Whoop history to CSV with a rolling 30/60-day HRV/RHR baseline, for longitudinal analysis (stdlib Python, no dependencies).
 
@@ -82,6 +84,7 @@ Restart Claude Code in your project directory. Ask it:
 
 If it can fetch from Intervals.icu and reply in coach mode — you're set.
 
+**New here?** Instead of editing `CLAUDE.md` by hand, just ask the coach *"help me set up"* — the `onboarding` skill interviews you and fills in your profile.
 ## Optional: Whoop (recovery) and weather
 
 Both are optional — the coach works fine on Intervals.icu alone.
