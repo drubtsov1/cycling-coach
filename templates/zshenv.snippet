@@ -1,11 +1,18 @@
-# --- cycling-coach plugin (Intervals.icu MCP) ---
+# --- cycling-coach plugin ---
 
+# Intervals.icu MCP (required)
 # Path to your `uv` binary (run `which uv` to check)
 export UV_PATH="$HOME/.local/bin/uv"
-
 # Path to your local clone of intervals-mcp-server
 export INTERVALS_MCP_PATH="$HOME/cycling/intervals-mcp-server"
-
 # Your Intervals.icu credentials (https://intervals.icu/settings → API)
 export INTERVALS_API_KEY="your-api-key-here"
 export INTERVALS_ATHLETE_ID="i123456"
+
+# Whoop MCP (optional — recovery/sleep/HRV). Create an OAuth app at
+# https://developer.whoop.com (redirect http://localhost:3000/callback), then
+# add the whoop block to .mcp.json and uncomment these:
+# export WHOOP_CLIENT_ID="your-whoop-client-id"
+# export WHOOP_CLIENT_SECRET="your-whoop-client-secret"
+
+# Open-Meteo MCP (optional — weather) needs no credentials.

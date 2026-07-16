@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  WHOOP history export — daily launchd job (macOS).
+
+  Replace __WHOOP_EXPORT_DIR__ with the absolute path to this scripts/whoop_export
+  directory, then install:
+    cp launchd.plist.template ~/Library/LaunchAgents/com.example.whoop-export.plist
+    # edit the copy: set __WHOOP_EXPORT_DIR__ and, if you like, the Label
+    launchctl load -w ~/Library/LaunchAgents/com.example.whoop-export.plist
+  Fire now:
+    launchctl start com.example.whoop-export
+
+  Caveat: StartCalendarInterval does NOT wake a sleeping mac and does NOT catch
+  up missed runs. That's fine here — the export is incremental, so a missed day
+  is filled by the next run's lookback window.
+
+  On Linux, use cron instead: `15 8 * * *  /path/to/scripts/whoop_export/run.sh`.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.whoop-export</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>__WHOOP_EXPORT_DIR__/run.sh</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>8</integer>
+        <key>Minute</key>
+        <integer>15</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>__WHOOP_EXPORT_DIR__/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>__WHOOP_EXPORT_DIR__/launchd.err.log</string>
+</dict>
+</plist>

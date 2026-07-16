@@ -15,3 +15,7 @@ __pycache__/
 # Personal session-handoff state (conversational layer — never commit).
 # Anchored to repo root so templates/state/ is NOT ignored.
 /state/
+# whoop_export output + logs (your personal data — never commit)
+data/
+scripts/whoop_export/*.log
+scripts/whoop_export/.pytest_cache/
