@@ -18,6 +18,11 @@
         "API_KEY": "${INTERVALS_API_KEY}",
         "LOG_LEVEL": "INFO"
       }
+    },
+    "open-meteo": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "-p", "open-meteo-mcp-server", "open-meteo-mcp-server"]
     }
   }
 }
