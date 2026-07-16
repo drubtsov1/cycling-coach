@@ -1,0 +1,18 @@
+# Session handoff
+
+Living digest of the conversational coaching layer — the stuff that lives nowhere
+else (not in Intervals.icu, Whoop, or your nutrition log). The coach reads this at
+the start of a session to recover context, and keeps it current through the day.
+
+**Maintenance:** update after any plan adjustment, decision, cancelled/moved ride,
+or notable thing you mention. Don't duplicate data that's already in Intervals
+(load / power / activities) or the nutrition log (food) — only the conversational
+layer and decisions. Keep it compact; prune stale entries.
+
+Entry format: `- YYYY-MM-DD HH:MM — <what and why>`
+
+---
+
+<!-- Newest entries at the bottom. Example:
+- 2026-07-10 08:05 — moved Sat long ride to Sun (rain); Sat becomes easy Z2
+-->

@@ -12,6 +12,9 @@ __pycache__/
 !.env.example
 *.local.json
 
+# Personal session-handoff state (conversational layer — never commit).
+# Anchored to repo root so templates/state/ is NOT ignored.
+/state/
 # whoop_export output + logs (your personal data — never commit)
 data/
 scripts/whoop_export/*.log
