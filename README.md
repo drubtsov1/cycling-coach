@@ -7,14 +7,17 @@ A personal cycling coach for [Claude Code](https://docs.claude.com/en/docs/claud
 **Skills** (auto-activated when relevant):
 - `onboarding` — interviews you and fills your `CLAUDE.md` profile (FTP, schedule, goals) on first run
 - `post-ride-drink` — recovery drink carbs + protein (g/kg) based on duration + TSS/h
-- `ride-fueling` — full on-ride nutrition plan (bottles, gels, shop stops, race fueling)
+- `ride-fueling` — full ride nutrition plan: pre-ride, on-ride (bottles, gels, shop stops), and race fueling
+- `nutrition-log` — daily food log with macros summed against a training-scaled target
 - `intervals-workout` — create/modify structured workouts in Intervals.icu via MCP, with the right power targets, intensity fields, and lap-press behavior
+- `ride-analysis` — deep per-interval / segment / climb analysis from raw streams (NP/IF/TSS/decoupling, gradient base→summit, FIT device laps)
 
-**MCP integration:** the [Intervals.icu MCP server](https://github.com/mvilanova/intervals-mcp-server) wired into Claude Code so it can read your activities, wellness, and calendar in real time.
+**MCP integration:** the [Intervals.icu MCP server](https://github.com/mvilanova/intervals-mcp-server) wired into Claude Code so it can read your activities, training load, and calendar in real time. Two **optional** MCPs extend it — **Open-Meteo** (free weather for ride planning, no key) and **Whoop** (direct recovery/sleep/HRV, fresher than the wearable data mirrored into Intervals). See [Optional: Whoop and weather](#optional-whoop-recovery-and-weather) below.
 
 **Coach persona:** a `CLAUDE.md` template that turns Claude into a coach who plans around your social rides, watches your CTL/ATL/TSB balance, and respects that cycling is supposed to be fun.
 
 **📖 Full guide:** [`docs/GUIDE.md`](docs/GUIDE.md) — capability catalog, data-source routing, daily workflows, and example prompts.
+**Bonus script:** [`scripts/whoop_export/`](scripts/whoop_export/) — optionally mirror your full Whoop history to CSV with a rolling 30/60-day HRV/RHR baseline, for longitudinal analysis (stdlib Python, no dependencies).
 
 ## Setup (one-time, ~10 minutes)
 
@@ -81,6 +84,46 @@ Restart Claude Code in your project directory. Ask it:
 If it can fetch from Intervals.icu and reply in coach mode — you're set.
 
 **New here?** Instead of editing `CLAUDE.md` by hand, just ask the coach *"help me set up"* — the `onboarding` skill interviews you and fills in your profile.
+## Optional: Whoop (recovery) and weather
+
+Both are optional — the coach works fine on Intervals.icu alone.
+
+**Open-Meteo (weather)** is already in `mcp.json.template`, so it's wired up as
+soon as you copy the template. It's free and needs no key — just set your
+**Location** in `CLAUDE.md` and the coach pulls forecasts for ride planning.
+Delete the `open-meteo` block from `.mcp.json` if you don't want it.
+
+**Whoop (recovery, sleep, HRV)** — fresher and more complete than the wearable
+data mirrored into Intervals. To add it:
+
+1. Create an OAuth app at https://developer.whoop.com — set the redirect URL to
+   `http://localhost:3000/callback` and enable the read scopes (recovery, sleep,
+   workout, cycles, profile, body measurement) plus `offline`.
+2. Add the client id/secret to `~/.zshenv` (the `templates/zshenv.snippet` has
+   commented lines for them):
+   ```bash
+   export WHOOP_CLIENT_ID="your-whoop-client-id"
+   export WHOOP_CLIENT_SECRET="your-whoop-client-secret"
+   ```
+3. Add a `whoop` block to `mcpServers` in your `.mcp.json`:
+   ```json
+   "whoop": {
+     "type": "stdio",
+     "command": "npx",
+     "args": ["-y", "whoop-ai-mcp"],
+     "env": {
+       "WHOOP_CLIENT_ID": "${WHOOP_CLIENT_ID}",
+       "WHOOP_CLIENT_SECRET": "${WHOOP_CLIENT_SECRET}"
+     }
+   }
+   ```
+4. Restart your terminal and Claude Code. The first Whoop call opens an OAuth flow
+   in your browser; tokens are cached at `~/.whoop-mcp/tokens.json` and refresh
+   automatically.
+
+The CLAUDE.md template already routes recovery/sleep/HRV questions to Whoop when
+present (and documents why Whoop *strain* and *calories* are unreliable for
+cyclists).
 
 ## Updating
 
@@ -104,6 +147,12 @@ Skills and templates update automatically. The Intervals.icu MCP server you upda
 - `uv` is installed and `UV_PATH` points to the right binary
 
 **API returns 401?** Your `INTERVALS_API_KEY` is wrong or expired — regenerate at https://intervals.icu/settings.
+
+**Whoop not connecting?** Check `WHOOP_CLIENT_ID` / `WHOOP_CLIENT_SECRET` are set
+in `~/.zshenv` and that the OAuth app's redirect URL is exactly
+`http://localhost:3000/callback`. Whoop access tokens live ~1 h and refresh
+automatically; if a session goes stale, restart Claude Code to reload the cached
+token from `~/.whoop-mcp/tokens.json`.
 
 ## Credits
 

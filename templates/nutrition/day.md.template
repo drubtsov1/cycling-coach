@@ -1,0 +1,23 @@
+# Nutrition — {{DATE}}
+
+Day type: {{DAY_TYPE}}  <!-- Off / Z1 / Z2 / Z2 long / Long / Race -->
+Target: {{KCAL}} kcal · C {{CARBS}} g · P {{PROTEIN}} g · F {{FAT}} g
+
+## Context
+
+- Form (Intervals): CTL __ · ATL __ · TSB __
+- Wellness (Whoop, if connected): recovery __% · HRV __ · RHR __ · sleep __ h
+- How the day's plan shapes the target (recovery day → protein up, carbs
+  moderate; long ride → carbs up).
+
+## Meals
+
+_(filled through the day)_
+
+<!-- time — item — portion — kcal / C / P / F
+08:00 — oats 60 g + banana + honey 1 tbsp — 396 / 74 / 9 / 4
+-->
+
+## Day total
+
+_(sum at end of day; add the per-ride kcal from Intervals; show diff vs target)_
